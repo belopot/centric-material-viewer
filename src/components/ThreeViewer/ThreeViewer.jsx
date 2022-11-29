@@ -27,7 +27,7 @@ export default function ThreeViewer() {
   const currentExposure = useStore(state => state.currentExposure);
   const setCurrentExposure = useStore(state => state.setCurrentExposure);
 
-  const materialData = useStore(state => state.materialData);
+  const selectedMaterialData = useStore(state => state.selectedMaterialData);
   const currentPhysics = useStore(state => state.currentPhysics);
 
   const loaderVisible = useStore(state => state.loaderVisible);
@@ -75,10 +75,10 @@ export default function ThreeViewer() {
 
   //Change material
   useEffect(() => {
-    if (materialData) {
-      threeEngineRef.current.setMaterialToMeshes(materialData);
+    if (selectedMaterialData) {
+      threeEngineRef.current.setMaterialToMeshes(selectedMaterialData);
     }
-  }, [materialData]);
+  }, [selectedMaterialData]);
 
   //Update envmap
   useEffect(() => {

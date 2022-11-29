@@ -14,7 +14,6 @@ import Lights from './Lights';
 import {FitCameraToSelection, ShadowPlane} from './Helpers';
 import Composer from './Composer';
 import {MESH_HIGHLIGHT_COLOR, SPACE_SIZE} from './Constants';
-import LoadFileAsBlob from 'utils/LoadFileAsBlob';
 
 export default class ThreeEngine {
   /**

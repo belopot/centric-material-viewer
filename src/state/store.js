@@ -1,5 +1,5 @@
 import create from 'zustand';
-import {MATERIAL_DATA} from 'dataset/materials';
+import {PBR_MATERIAL_DATA} from 'dataset/materials';
 import {PHYSICS_DATA} from 'dataset/physics';
 
 export const useStore = create((set, get) => ({
@@ -38,8 +38,8 @@ export const useStore = create((set, get) => ({
   currentExposure: 1,
   setCurrentExposure: v => set({currentExposure: v}),
   // Material Data
-  materialData: MATERIAL_DATA[0],
-  setMaterialData: v => set({materialData: v}),
+  selectedMaterialData: PBR_MATERIAL_DATA[0],
+  setSelectedMaterialData: v => set({selectedMaterialData: v}),
   // Physics selector
   currentPhysics: PHYSICS_DATA[1],
   setCurrentPhysics: v => set({currentPhysics: v}),
