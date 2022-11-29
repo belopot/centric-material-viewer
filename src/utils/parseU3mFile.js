@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import JSZip from 'jszip';
 import {DEFAULT_MATERIAL_DATA} from 'dataset/materials';
 import rgbToHex from './rgbToHex';
-import arraybufferToBase64 from './arrayBufferToBase64.js';
+import arraybufferToBase64 from './arrayBufferToBase64';
 
 /**
  * @param {ArrayBuffer} arrayBuffer
