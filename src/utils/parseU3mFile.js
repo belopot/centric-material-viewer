@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import JSZip from 'jszip';
 import {DEFAULT_MATERIAL_DATA} from 'dataset/materials';
-import arraybufferToBase64 from './arraybufferToBase64';
 import rgbToHex from './rgbToHex';
 
 /**
@@ -196,3 +195,17 @@ export default function parseU3mFile(arrayBuffer) {
     });
   });
 }
+
+const arraybufferToBase64 = arrayBuffer => {
+  const b64encoded = btoa(
+    [].reduce.call(
+      new Uint8Array(arrayBuffer),
+      function (p, c) {
+        return p + String.fromCharCode(c);
+      },
+      '',
+    ),
+  );
+  const mimetype = 'image/jpeg';
+  return 'data:' + mimetype + ';base64,' + b64encoded;
+};
