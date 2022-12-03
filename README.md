@@ -1,6 +1,6 @@
 # Material Viewer
 
-Material Viewer
+3D Material Viewer by using three.js and React.js
 
 # Screenshot
 ![](public/preview.jpg)
