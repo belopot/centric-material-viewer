@@ -3,7 +3,7 @@
 Material Viewer
 
 # Screenshot
-![](public/preview.jpg)
+(public/preview.jpg)
 
 ## Install
 
