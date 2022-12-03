@@ -2,6 +2,9 @@
 
 Material Viewer
 
+# Screenshot
+![](public/preview.jpg)
+
 ## Install
 
 Assumes you already have `node` installed. If you already have `yarn` installed you can skip the next command.
