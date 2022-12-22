@@ -12,4 +12,4 @@ const arraybufferToBase64 = arrayBuffer => {
   return 'data:' + mimetype + ';base64,' + b64encoded;
 };
 
-export default arraybufferToBase64;
+export {arraybufferToBase64};

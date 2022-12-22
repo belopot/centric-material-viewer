@@ -3,20 +3,7 @@ import JSZip from 'jszip';
 import {nanoid} from 'nanoid';
 import {DEFAULT_MATERIAL} from 'dataset/materials';
 import rgbToHex from './rgbToHex';
-
-const arraybufferToBase64 = arrayBuffer => {
-  const b64encoded = btoa(
-    [].reduce.call(
-      new Uint8Array(arrayBuffer),
-      function (p, c) {
-        return p + String.fromCharCode(c);
-      },
-      '',
-    ),
-  );
-  const mimetype = 'image/jpeg';
-  return 'data:' + mimetype + ';base64,' + b64encoded;
-};
+import {arraybufferToBase64} from './bufferToBase64';
 
 /**
  * @param {ArrayBuffer} arrayBuffer
