@@ -2,8 +2,21 @@ import * as THREE from 'three';
 import JSZip from 'jszip';
 import {nanoid} from 'nanoid';
 import {DEFAULT_MATERIAL} from 'dataset/materials';
-import arraybufferToBase64 from './arraybufferToBase64.js';
 import rgbToHex from './rgbToHex';
+
+const arraybufferToBase64 = arrayBuffer => {
+  const b64encoded = btoa(
+    [].reduce.call(
+      new Uint8Array(arrayBuffer),
+      function (p, c) {
+        return p + String.fromCharCode(c);
+      },
+      '',
+    ),
+  );
+  const mimetype = 'image/jpeg';
+  return 'data:' + mimetype + ';base64,' + b64encoded;
+};
 
 /**
  * @param {ArrayBuffer} arrayBuffer
