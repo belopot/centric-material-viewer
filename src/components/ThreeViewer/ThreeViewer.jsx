@@ -91,7 +91,7 @@ export default function ThreeViewer() {
     if (currentUV) {
       threeEngineRef.current.setUV(currentUV);
     }
-  }, [currentUV, selectedMaterialData]);
+  }, [currentUV, selectedMaterialData, currentPhysics]);
 
   //Update envmap
   useEffect(() => {
