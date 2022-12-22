@@ -1,4 +1,6 @@
-export const DEFAULT_MATERIAL_DATA = {
+export const DEFAULT_MATERIAL = {
+  id: 'mat-id',
+  name: 'material',
   preview: '',
   color: '#dedede',
   map: '',
@@ -351,5 +353,19 @@ export const U3M_MATERIAL_DATA = [
     code: 'C41259',
     type: 'U3M',
     url: '/u3ms/07.u3ma',
+  },
+  {
+    id: 'u3m_001',
+    name: 'Bra Hooks Single',
+    code: 'C41259',
+    type: 'U3M',
+    url: '/u3ms/Bra_Hooks_Single.u3ma',
+  },
+  {
+    id: 'u3m_002',
+    name: 'sbk 882 32L',
+    code: 'C41259',
+    type: 'U3M',
+    url: '/u3ms/sbk-882-32L.u3ma',
   },
 ];

@@ -1,6 +1,7 @@
 import create from 'zustand';
 import {PBR_MATERIAL_DATA} from 'dataset/materials';
 import {PHYSICS_DATA} from 'dataset/physics';
+import {DEFAULT_UV} from 'dataset/uv';
 
 export const useStore = create((set, get) => ({
   // Loader
@@ -43,4 +44,7 @@ export const useStore = create((set, get) => ({
   // Physics selector
   currentPhysics: PHYSICS_DATA[1],
   setCurrentPhysics: v => set({currentPhysics: v}),
+  // UV Editor
+  currentUV: DEFAULT_UV,
+  setCurrentUV: v => set({currentUV: v}),
 }));

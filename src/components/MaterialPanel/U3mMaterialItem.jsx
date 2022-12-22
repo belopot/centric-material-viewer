@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
-import {toast} from 'react-toastify';
+
+import {RadioButton} from 'primereact/radiobutton';
 
 import {useStore} from 'state/store';
 import parseU3mFile from 'utils/parseU3mFile';
@@ -9,6 +10,7 @@ import blobToArray from 'utils/blobToArray';
 
 import PlaceholderImage from 'assets/images/image-placeholder.png';
 import Loader from 'components/Loader';
+import {DEFAULT_MATERIAL} from 'dataset/materials';
 
 export default function U3mMaterialItem({data}) {
   const selectedMaterialData = useStore(state => state.selectedMaterialData);
@@ -17,7 +19,8 @@ export default function U3mMaterialItem({data}) {
   );
 
   const [fetching, setFetching] = useState(false);
-  const [materialData, setMaterialData] = useState(null);
+  const [materials, setMaterials] = useState([]);
+  const [material, setMaterial] = useState(DEFAULT_MATERIAL);
 
   const previewRef = useRef();
 
@@ -32,13 +35,16 @@ export default function U3mMaterialItem({data}) {
     try {
       const blob = await urlToBlob(data.url);
       const arrayBuffer = await blobToArray(blob);
-      const material = await parseU3mFile(arrayBuffer);
+      const result = await parseU3mFile(arrayBuffer);
 
       // Set preview
-      previewRef.current.src = material.preview;
+      previewRef.current.src = result.preview;
 
-      // Set material data
-      setMaterialData(material);
+      // Set materials
+      setMaterials(result.materials);
+
+      // Set default material
+      setMaterial(result.materials[0]);
     } finally {
       setFetching(false);
     }
@@ -49,18 +55,41 @@ export default function U3mMaterialItem({data}) {
   }, [data]);
 
   return (
-    <Item active={data.id === selectedMaterialData.id}>
+    <Item active={material.id === selectedMaterialData.id}>
       <Loader visible={fetching} size={30} />
       <Content
-        onClick={() => {
-          setSelectedMaterialData(materialData);
+        onClick={e => {
+          setSelectedMaterialData(material);
         }}
       >
-        <Preview ref={previewRef} src={PlaceholderImage} />
-        <Caption>
-          <h1>{data.name}</h1>
-          <p>Type: {data.type}</p>
-        </Caption>
+        <MaterialTap>
+          <Preview ref={previewRef} src={PlaceholderImage} />
+          <Caption>
+            <h1>{data.name}</h1>
+            <p>Type: {data.type}</p>
+          </Caption>
+        </MaterialTap>
+        {materials.length > 1 && (
+          <Materials>
+            {materials.map((mat, index) => (
+              <div key={index} className="field-radiobutton">
+                <RadioButton
+                  inputId={mat.id}
+                  name="material"
+                  value={mat}
+                  onChange={e => {
+                    setTimeout(() => {
+                      setMaterial(e.value);
+                      setSelectedMaterialData(e.value);
+                    }, 500);
+                  }}
+                  checked={material.id === mat.id}
+                />
+                <label htmlFor={mat.id}>{mat.name}</label>
+              </div>
+            ))}
+          </Materials>
+        )}
       </Content>
     </Item>
   );
@@ -71,13 +100,16 @@ const Item = styled.div`
   cursor: pointer;
   transition: all 0.2s ease-out;
   padding: 0.5em;
-  background-color: ${props => (props.active ? '#daedfe' : 'transparent')};
-  &:hover {
-    background-color: #f0f7fd;
-  }
+  background-color: ${props => (props.active ? '#a2d0fa' : 'transparent')};
 `;
 
 const Content = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+`;
+
+const MaterialTap = styled.div`
   position: relative;
   display: flex;
 `;
@@ -99,10 +131,17 @@ const Caption = styled.div`
     line-height: 1.5;
   }
   > p {
-    color: #aaa;
+    color: #888;
     font-weight: 100;
     font-size: 1em;
     margin: 0;
     padding: 0;
   }
+`;
+
+const Materials = styled.div`
+  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
 `;

@@ -15,7 +15,7 @@ import {device} from './device';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Load primereact styles
-import './md-light-deeppurple/theme.css';
+import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
@@ -47,6 +47,7 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+    user-select: none;
     padding: 0;
     margin: 0;
   }

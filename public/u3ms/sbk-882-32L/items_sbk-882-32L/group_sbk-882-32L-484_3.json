@@ -1,0 +1,167 @@
+{
+    "created": "2021-10-19T16:51:23",
+    "custom": {
+        "Browzwear": {
+            "bw_created_version": "11.1.2",
+            "edges": [],
+            "facing": 0,
+            "front_axis": 0,
+            "items": [
+                {
+                    "id": "{c12b59f3-c798-47a4-8927-14d447ea7fb8}",
+                    "mode": "overlay",
+                    "name": "材质_1 72"
+                },
+                {
+                    "id": "{290d96b8-ee38-43e5-afc1-b37d6283952d}",
+                    "mode": "overlay",
+                    "name": "材质_1 73"
+                },
+                {
+                    "id": "{917328b1-a869-4a06-88e5-eb972509133c}",
+                    "mode": "overlay",
+                    "name": "材质_1 74"
+                }
+            ],
+            "markers": [
+                {
+                    "name": "Point 2",
+                    "pos": {
+                        "x": -0.005465626250952482,
+                        "y": -0.7334429621696472,
+                        "z": -0.1965646594762802
+                    }
+                },
+                {
+                    "name": "Point 3",
+                    "pos": {
+                        "x": 0.05099267512559891,
+                        "y": 0.7722054123878479,
+                        "z": -0.1672067493200302
+                    }
+                },
+                {
+                    "name": "Point 4",
+                    "pos": {
+                        "x": 0.7178134322166443,
+                        "y": 0.04696011170744896,
+                        "z": -0.20582817494869233
+                    }
+                },
+                {
+                    "name": "Point 5",
+                    "pos": {
+                        "x": -0.6803929209709168,
+                        "y": 0.10777365416288376,
+                        "z": -0.21953152120113374
+                    }
+                }
+            ],
+            "mass": 5.0,
+            "material": {
+                "alpha": {
+                    "alpha_mask": "basecolor",
+                    "blend_mode": "normal",
+                    "is_auto_generated": false,
+                    "is_disabled": false,
+                    "texture": {
+                        "image": {
+                            "crop": {
+                                "height": 105.83332824707031,
+                                "width": 105.83332824707031,
+                                "x": 0.0,
+                                "y": 0.0
+                            },
+                            "dpi": {
+                                "x": 72,
+                                "y": 72
+                            },
+                            "flip_x": false,
+                            "flip_y": false,
+                            "height": 105.83332824707031,
+                            "layout_angle": -0.0,
+                            "mip_map": true,
+                            "name": "12f990402172780745f6ff8469b543d4.png",
+                            "path": "textures/12f990402172780745f6ff8469b543d4.png",
+                            "repeat": {
+                                "mode": "auto_size",
+                                "rotation": 0.0
+                            },
+                            "width": 105.83332824707031
+                        },
+                        "inherit": "diffuse",
+                        "offset": 0
+                    }
+                },
+                "basecolor": {
+                    "alpha_mask": "basecolor",
+                    "blend_mode": "normal",
+                    "is_auto_generated": false,
+                    "is_disabled": false,
+                    "texture": {
+                        "image": {
+                            "crop": {
+                                "height": 105.83332824707031,
+                                "width": 105.83332824707031,
+                                "x": 0.0,
+                                "y": 0.0
+                            },
+                            "dpi": {
+                                "x": 72,
+                                "y": 72
+                            },
+                            "flip_x": false,
+                            "flip_y": false,
+                            "height": 105.83332824707031,
+                            "layout_angle": -0.0,
+                            "mip_map": true,
+                            "name": "bwtceff1896.png",
+                            "path": "textures/bwtceff1896.png",
+                            "repeat": {
+                                "mode": "auto_size",
+                                "rotation": 0.0
+                            },
+                            "width": 105.83332824707031
+                        },
+                        "mode": "overlay"
+                    }
+                },
+                "preview": null,
+                "user_information": "Size: 20mm\nMatching c,d: 484cd"
+            },
+            "metadata": {},
+            "mirror": true,
+            "modified": "2021-10-19T16:51:24",
+            "path": "textures/0435e96eeb3c601b37c928ffc8e3d472/sbk-882-32L-484.fbx",
+            "preview": "sbk-882-32L-484_3/preview.png",
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "size_factor": 0.10000000149011612,
+            "type": "trim3d",
+            "up_axis": 1,
+            "vertical": 2
+        }
+    },
+    "description": "",
+    "id": "{d8a5042c-9b19-4722-85d7-1802a9d4554a}",
+    "items": [
+        {
+            "id": "{c12b59f3-c798-47a4-8927-14d447ea7fb8}",
+            "path": "材质_1_72.u3m"
+        },
+        {
+            "id": "{290d96b8-ee38-43e5-afc1-b37d6283952d}",
+            "path": "材质_1_73.u3m"
+        },
+        {
+            "id": "{917328b1-a869-4a06-88e5-eb972509133c}",
+            "path": "材质_1_74.u3m"
+        }
+    ],
+    "modified": "2021-10-19T16:51:23",
+    "name": "sbk-882-32L-484 3",
+    "schema": "1.0"
+}

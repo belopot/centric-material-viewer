@@ -30,10 +30,7 @@ const Item = styled.div`
   cursor: pointer;
   transition: all 0.2s ease-out;
   padding: 0.5em;
-  background-color: ${props => (props.active ? '#daedfe' : 'transparent')};
-  &:hover {
-    background-color: #f0f7fd;
-  }
+  background-color: ${props => (props.active ? '#a2d0fa' : 'transparent')};
 `;
 
 const Content = styled.div`

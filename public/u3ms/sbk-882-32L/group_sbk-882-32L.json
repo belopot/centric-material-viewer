@@ -1,0 +1,38 @@
+{
+    "created": "2021-10-19T16:51:23",
+    "custom": {
+        "Browzwear": {
+            "items": [
+                {
+                    "id": "{d8a5042c-9b19-4722-85d7-1802a9d4554a}",
+                    "name": "sbk-882-32L-484 3",
+                    "role": "button"
+                },
+                {
+                    "id": "{8f191eea-482c-4d42-a2ce-33f1aecdd76e}",
+                    "name": "button-hole 39",
+                    "role": "buttonhole"
+                }
+            ],
+            "metadata": {},
+            "modified": "2021-10-19T16:51:24",
+            "preview": "preview.png",
+            "type": "button"
+        }
+    },
+    "description": "",
+    "id": "{1487faee-369f-4d30-ad85-b3d12dac38c1}",
+    "items": [
+        {
+            "id": "{d8a5042c-9b19-4722-85d7-1802a9d4554a}",
+            "path": "items_sbk-882-32L/group_sbk-882-32L-484_3.json"
+        },
+        {
+            "id": "{8f191eea-482c-4d42-a2ce-33f1aecdd76e}",
+            "path": "items_sbk-882-32L/button-hole_39.u3m"
+        }
+    ],
+    "modified": "2021-10-19T16:51:23",
+    "name": "sbk-882-32L",
+    "schema": "1.0"
+}

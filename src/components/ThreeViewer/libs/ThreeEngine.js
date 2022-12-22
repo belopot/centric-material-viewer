@@ -537,13 +537,156 @@ export default class ThreeEngine {
     newMaterial.needsUpdate = true;
 
     //Set material
+    let targetMesh;
     if (this.meshes.length === 1) {
-      this.meshes[0].material = newMaterial;
+      targetMesh = this.meshes[0];
     } else if (this.meshes.length === 2) {
-      this.meshes[1].material = newMaterial;
+      targetMesh = this.meshes[1];
     }
 
-    this.requestRenderIfNotRequested();
+    if (targetMesh) {
+      targetMesh.material = newMaterial;
+
+      this.requestRenderIfNotRequested();
+    }
+  }
+
+  /**
+   * @param {Object} data
+   */
+  setUV(data) {
+    let targetMesh;
+    if (this.meshes.length === 1) {
+      targetMesh = this.meshes[0];
+    } else if (this.meshes.length === 2) {
+      targetMesh = this.meshes[1];
+    }
+
+    if (targetMesh) {
+      // Albedo
+      if (targetMesh.material.map) {
+        targetMesh.material.map.offset.set(data.offset.x, data.offset.y);
+        targetMesh.material.map.repeat.set(data.repeat.x, data.repeat.y);
+        targetMesh.material.map.wrapS = targetMesh.material.map.wrapT =
+          THREE.RepeatWrapping;
+        targetMesh.material.map.rotation = THREE.MathUtils.degToRad(
+          data.rotation,
+        );
+        targetMesh.material.map.needsUpdate = true;
+        targetMesh.material.needsUpdate = true;
+      }
+
+      // Normal
+      if (targetMesh.material.normalMap) {
+        targetMesh.material.normalMap.offset.set(data.offset.x, data.offset.y);
+        targetMesh.material.normalMap.repeat.set(data.repeat.x, data.repeat.y);
+        targetMesh.material.normalMap.wrapS =
+          targetMesh.material.normalMap.wrapT = THREE.RepeatWrapping;
+        targetMesh.material.normalMap.rotation = THREE.MathUtils.degToRad(
+          data.rotation,
+        );
+        targetMesh.material.normalMap.needsUpdate = true;
+        targetMesh.material.needsUpdate = true;
+      }
+
+      // Bump
+      if (targetMesh.material.bumpMap) {
+        targetMesh.material.bumpMap.offset.set(data.offset.x, data.offset.y);
+        targetMesh.material.bumpMap.repeat.set(data.repeat.x, data.repeat.y);
+        targetMesh.material.bumpMap.wrapS = targetMesh.material.bumpMap.wrapT =
+          THREE.RepeatWrapping;
+        targetMesh.material.bumpMap.rotation = THREE.MathUtils.degToRad(
+          data.rotation,
+        );
+        targetMesh.material.bumpMap.needsUpdate = true;
+        targetMesh.material.needsUpdate = true;
+      }
+
+      // displacement
+      if (targetMesh.material.displacementMap) {
+        targetMesh.material.displacementMap.offset.set(
+          data.offset.x,
+          data.offset.y,
+        );
+        targetMesh.material.displacementMap.repeat.set(
+          data.repeat.x,
+          data.repeat.y,
+        );
+        targetMesh.material.displacementMap.wrapS =
+          targetMesh.material.displacementMap.wrapT = THREE.RepeatWrapping;
+        targetMesh.material.displacementMap.rotation = THREE.MathUtils.degToRad(
+          data.rotation,
+        );
+        targetMesh.material.displacementMap.needsUpdate = true;
+        targetMesh.material.needsUpdate = true;
+      }
+
+      // roughness
+      if (targetMesh.material.roughnessMap) {
+        targetMesh.material.roughnessMap.offset.set(
+          data.offset.x,
+          data.offset.y,
+        );
+        targetMesh.material.roughnessMap.repeat.set(
+          data.repeat.x,
+          data.repeat.y,
+        );
+        targetMesh.material.roughnessMap.wrapS =
+          targetMesh.material.roughnessMap.wrapT = THREE.RepeatWrapping;
+        targetMesh.material.roughnessMap.rotation = THREE.MathUtils.degToRad(
+          data.rotation,
+        );
+        targetMesh.material.roughnessMap.needsUpdate = true;
+        targetMesh.material.needsUpdate = true;
+      }
+
+      // alpha
+      if (targetMesh.material.alphaMap) {
+        targetMesh.material.alphaMap.offset.set(data.offset.x, data.offset.y);
+        targetMesh.material.alphaMap.repeat.set(data.repeat.x, data.repeat.y);
+        targetMesh.material.alphaMap.wrapS =
+          targetMesh.material.alphaMap.wrapT = THREE.RepeatWrapping;
+        targetMesh.material.alphaMap.rotation = THREE.MathUtils.degToRad(
+          data.rotation,
+        );
+        targetMesh.material.alphaMap.needsUpdate = true;
+        targetMesh.material.needsUpdate = true;
+      }
+
+      // ao
+      if (targetMesh.material.aoMap) {
+        targetMesh.material.aoMap.offset.set(data.offset.x, data.offset.y);
+        targetMesh.material.aoMap.repeat.set(data.repeat.x, data.repeat.y);
+        targetMesh.material.aoMap.wrapS = targetMesh.material.aoMap.wrapT =
+          THREE.RepeatWrapping;
+        targetMesh.material.aoMap.rotation = THREE.MathUtils.degToRad(
+          data.rotation,
+        );
+        targetMesh.material.aoMap.needsUpdate = true;
+        targetMesh.material.needsUpdate = true;
+      }
+
+      // emmissive
+      if (targetMesh.material.emissiveMap) {
+        targetMesh.material.emissiveMap.offset.set(
+          data.offset.x,
+          data.offset.y,
+        );
+        targetMesh.material.emissiveMap.repeat.set(
+          data.repeat.x,
+          data.repeat.y,
+        );
+        targetMesh.material.emissiveMap.wrapS =
+          targetMesh.material.emissiveMap.wrapT = THREE.RepeatWrapping;
+        targetMesh.material.emissiveMap.rotation = THREE.MathUtils.degToRad(
+          data.rotation,
+        );
+        targetMesh.material.emissiveMap.needsUpdate = true;
+        targetMesh.material.needsUpdate = true;
+      }
+
+      this.requestRenderIfNotRequested();
+    }
   }
 
   loadModel(file) {
