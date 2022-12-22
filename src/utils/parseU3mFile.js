@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import JSZip from 'jszip';
 import {nanoid} from 'nanoid';
 import {DEFAULT_MATERIAL} from 'dataset/materials';
-import arraybufferToBase64 from './arraybufferToBase64';
+import arraybufferToBase64 from './arraybufferToBase64.js';
 import rgbToHex from './rgbToHex';
 
 /**
